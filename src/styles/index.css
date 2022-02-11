@@ -26,6 +26,8 @@
 
 body {
     font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+    background: #030303;
 }
 
 .button {
@@ -78,6 +80,56 @@ nav {
     cursor: pointer;
 }
 
+.mobile-nav {
+    position: absolute;
+    background: #030303;
+    color: white;
+    padding: 2.5em 1.5em;
+    list-style-type: none; /* NO MORE BULLETS >:( */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    top: 10vh;
+    right: -200px;
+    transition: 0.25s ease-in;
+}
+
+input[name="mobileMenu"]:checked ~ .mobile-nav {
+    right: 0;
+}
+
+.mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    text-decoration: line-through;
+}
+
+/***************************/
+/* MAC USERS (AND WINDOWS) */
+/***************************/
+
+.desktop {
+    display: none;
+    justify-content: space-between;
+    width: 300px;
+    list-style-type: none; /* STOP BULLETS */
+}
+
+.desktop a {
+    text-decoration: none;
+    color: #030303;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.desktop a:hover {
+    text-decoration: line-through;
+}
+
+
 /*************/
 /* SECTION 1 */
 /*************/
@@ -113,7 +165,6 @@ nav {
     max-width: 1200px;
     mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND IS VISIBLE THOUGH*/
 }
-
 
 /*************/
 /* SECTION 2 */
@@ -155,12 +206,19 @@ nav {
 /*************/
 
 .third-section {
+    display: grid;
+    place-items: center;
+    padding: 0 0 4em 0;
+}
+
+.game-info-container {
     background: #030303;
-    padding: 0 2em;
+    padding: 0 2em 5em 2em;
     display: flex;
     flex-direction: column; /* WILL BE CHANGED TO ROW IN MEDIA */
     align-items: center;
-    gap: 6em; /* TODO: MEDIAQUERY TO 2EM WHEN BIG */
+    gap: 6em;
+    max-width: 1000px;
 }
 
 .game-info {
@@ -206,59 +264,24 @@ nav {
     width: 100%; /* TODO: DELETE */
 }
 
-.mobile-nav {
-    position: absolute;
-    background: #030303;
-    color: white;
-    padding: 2.5em 1.5em;
-    list-style-type: none; /* NO MORE BULLETS >:( */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    top: 10vh;
-    right: -200px;
-    transition: 0.25s ease-in;
-}
 
-input[name="mobileMenu"]:checked ~ .mobile-nav {
-    right: 0;
-}
-
-.mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
-    color: white;
-    text-decoration: none;
-}
-
-.mobile-nav a:hover {
-    text-decoration: line-through;
-}
-
-/***************************/
-/* MAC USERS (AND WINDOWS) */
-/***************************/
-
-.desktop {
-    display: none;
-    justify-content: space-between;
-    width: 300px;
-    list-style-type: none; /* STOP BULLETS */
-
-}
-
-.desktop a {
-    text-decoration: none;
-    color: #030303;
-}
-
-
-
-
-@media (min-width: 500px) {
+@media (min-width: 600px) {
     .mobile {
         display: none;
     }
+
     .desktop {
         display: flex;
+    }
+
+    .game-info-container {
+        flex-direction: row;
+        align-items: start;
+        gap: 2em;
+    }
+
+    .game-info {
+        width: 50%;
     }
 
 }
