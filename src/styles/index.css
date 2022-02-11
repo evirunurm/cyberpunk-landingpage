@@ -1,0 +1,264 @@
+/* CONSTANTS */
+/* PINK: #FF003C */
+/* BLACK: #030303 */
+/* YELLOW: #F7F100 */
+
+
+/*****************/
+/* NORMALIZATION */
+/*****************/
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/******************/
+/* RESPONSIVENESS */
+/******************/
+.desktop {
+    display: none;
+}
+
+/***********/
+/* GENERAL */
+/***********/
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+.button {
+    padding: 0.85em 4em;
+    color: white;
+    border: none;
+    background: #FF003C;
+    cursor: pointer;
+}
+
+.button:hover {
+ /* TODO */
+}
+
+/* HIDE THE CHECKBOX OF THE MENU */
+input[name="mobileMenu"] {
+    display: none;
+}
+
+/*******/
+/* NAV */
+/*******/
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    padding: 0 1.5em;
+}
+
+.brand-img {
+    height: 80%;
+}
+
+.nav-burger {
+    border: none;
+    background: #FF003C; /* PINK */
+    height: 50%;
+    padding: .85em 0.75em; /* CENTER THE TOMATO */
+    cursor: pointer;
+}
+
+.nav-burger img {
+    height: 100%;
+    cursor: pointer;
+}
+
+/*************/
+/* SECTION 1 */
+/*************/
+
+.first-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 15vh;
+}
+
+.background-img-container {
+    width: 100%;
+    height: 100%;  /* Full container size */
+    overflow: hidden; /* So the image doesnt push containers border */
+    position: absolute;
+    z-index: -10;
+    background-color: #F7F100; /* Yellow */
+    bottom: 0;
+}
+
+.background-img-container .girl {
+    position: absolute;
+    left: -200px; /* THIS WILL HAVE TO CHANGE IN MEDIA QUERY FOR DESKTOP */
+    bottom: -15px;
+    height: 90%;
+}
+
+.logo {
+    width: 100%;
+    max-width: 1200px;
+    mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND IS VISIBLE THOUGH*/
+}
+
+
+/*************/
+/* SECTION 2 */
+/*************/
+
+.second-section {
+    background: #030303;
+    color: white;
+    padding: 5em 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.second-section > p {
+    opacity: .5;
+    font-weight: 500;
+}
+
+.now-available-brands {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* SO THE THING DOESNT OVERFLOWS THE BODY */
+    max-width: 400px;
+    flex-wrap: wrap; /* SO WHEN ITS SMALL ENOUGH, IT JUMPS THE LINE */
+    margin: 2em 0;
+    gap: 1.5em;
+}
+
+.now-available-brands img {
+    height: 20px; /* TODO: MEDIAQUERY THIS OUT*/
+}
+
+/*************/
+/* SECTION 3 */
+/*************/
+
+.third-section {
+    background: #030303;
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column; /* WILL BE CHANGED TO ROW IN MEDIA */
+    align-items: center;
+    gap: 6em; /* TODO: MEDIAQUERY TO 2EM WHEN BIG */
+}
+
+.game-info {
+    position: relative;
+    background: #F7F100; /* YELLOW */
+}
+
+.game-info:after {
+    content: "";
+    position: absolute;
+    height: 4em; /* APRX SIZE OF THE IMAGE */
+    width: 100%;
+    bottom: -3.8em;
+    background: url("../../assets/imgs/support/bottom-border.png"); /* SETTING THE LOWER IMAGE */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.game-info-text-container {
+    padding: 3em 1.5em;
+}
+
+.game-info-text-container h3 {
+    font-size: 1.8rem;
+    padding-bottom: 0.75em;
+    border-bottom: 1px solid #030303;
+    margin-bottom: 1em;
+    position: relative; /* FOR THE :AFTER'S ABSOLUTE POSITIONING TO WORK */
+}
+
+/* THE BLACK THING ON THE RIGHT SIDE OF THE BORDER */
+.game-info-text-container h3:after {
+    content: "";
+    position: absolute;
+    background: #030303;
+    height: 5px;
+    width: 15%;
+    bottom: -5px; /* HAS TO BE THE SAME AS HEIGHT, BUT NEGATIVE */
+    left: 0;
+}
+
+.third-section img {
+    width: 100%; /* TODO: DELETE */
+}
+
+.mobile-nav {
+    position: absolute;
+    background: #030303;
+    color: white;
+    padding: 2.5em 1.5em;
+    list-style-type: none; /* NO MORE BULLETS >:( */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    top: 10vh;
+    right: -200px;
+    transition: 0.25s ease-in;
+}
+
+input[name="mobileMenu"]:checked ~ .mobile-nav {
+    right: 0;
+}
+
+.mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    text-decoration: line-through;
+}
+
+/***************************/
+/* MAC USERS (AND WINDOWS) */
+/***************************/
+
+.desktop {
+    display: none;
+    justify-content: space-between;
+    width: 300px;
+    list-style-type: none; /* STOP BULLETS */
+
+}
+
+.desktop a {
+    text-decoration: none;
+    color: #030303;
+}
+
+
+
+
+@media (min-width: 500px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: flex;
+    }
+
+}
