@@ -40,7 +40,6 @@ body {
 
 .button:hover {
     /* TODO */
-    box-shadow: 10px 10px 20px 20px #F7F100;
 }
 
 /* HIDE THE CHECKBOX OF THE MENU */
@@ -83,24 +82,25 @@ nav {
 }
 .mobile-nav {
     position: absolute;
-    background: #030303;
-    color: white;
+    background: #F7F100;
+    color: #030303;
     padding: 2.5em 1.5em;
     list-style-type: none; /* NO MORE BULLETS >:( */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    top: 10vh;
-    right: -200px;
-    transition: 0.25s ease-in;
+    right: 0;
+    top: -300px;
+    transition: 0.25s ease-in-out;
 }
 
 input[name="mobileMenu"]:checked ~ .mobile-nav {
     right: 0;
+    top: 10vh;
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
-    color: white;
+    color: #030303;
     text-decoration: none;
 }
 
@@ -113,7 +113,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 /***************************/
 
 .desktop {
-    display: none;
+    display: none; /* MOBILE FIRST */
     justify-content: space-between;
     width: 300px;
     list-style-type: none; /* STOP BULLETS */
@@ -121,7 +121,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 
 .desktop a {
     text-decoration: none;
-    color: #030303;
+    color: #030303; /* BLACK */
     font-weight: 700;
     font-size: 1.1em;
 }
@@ -129,6 +129,66 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 .desktop a:hover {
     text-decoration: line-through;
 }
+
+
+/********/
+/* MAIN */
+/********/
+
+
+/* SECTION 1 */
+
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    gap: 2em;
+    padding-bottom: 10vh;
+}
+
+.logo {
+    width: 100%;
+    max-width: 1000px;
+    mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND */
+}
+
+.down-arrows {
+    max-width: 3em;
+    overflow: hidden;
+    margin-top: 2em;
+}
+
+.block-container {
+    width: 45%;
+    height: 40%;
+    min-width: 200px;
+    background: #F7F100; /* YELLOW */
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    z-index: -10;
+
+    font-size: 2rem;
+    padding: 1em 1em 2em 1em;
+    font-weight: bold;
+}
+
+.block-container p {
+    max-width: 200px;
+}
+
+
+
+
+
+
+/*
+display: grid; FASTEST/SIMPLEST WAY OF CENTERING SOMETHING INSIDE
+place-items: center; FASTEST/SIMPLEST WAY OF CENTERING SOMETHING INSIDE
+*/
+
 
 
 
