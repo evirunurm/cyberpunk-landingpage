@@ -61,7 +61,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding: 0 1.5em;
+    padding: 0 2em; /* PADDING ON BORDER */
 }
 
 .brand-img {
@@ -72,7 +72,7 @@ nav {
     border: none;
     background: #FF003C; /* PINK */
     height: 50%;
-    padding: .85em 0.75em; /* CENTER THE TOMATO */
+    padding: .75em 0.75em; /* CENTER THE TOMATO */
     cursor: pointer;
 }
 
@@ -95,7 +95,6 @@ nav {
 }
 
 input[name="mobileMenu"]:checked ~ .mobile-nav {
-    right: 0;
     top: 10vh;
 }
 
@@ -130,11 +129,9 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     text-decoration: line-through;
 }
 
-
 /********/
 /* MAIN */
 /********/
-
 
 /* SECTION 1 */
 
@@ -163,31 +160,23 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 .block-container {
     width: 45%;
     height: 40%;
-    min-width: 200px;
+    min-width: 280px;
     background: #F7F100; /* YELLOW */
     position: absolute;
     bottom: 40%;
     left: 0;
-    z-index: -10;
-
+    z-index: -10; /* SO IT DOESNT APPEAR OVER THE BUTTON */
     font-size: 2rem;
-    padding: 1em 1em 2em 1em;
+    padding: 2em 2em 2em 2em;
     font-weight: bold;
+    clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
+    /* CLIP-PATH PARA HACER LA FORMA AL CUADRADO. CADA COPA-SEPARATED THING REPRESENTA UN PUNTO (X, Y) */
 }
 
-.block-container p {
+.block-container p { /* TEXT INSIDE YELLOW BOX */
     max-width: 200px;
 }
 
-
-
-
-
-
-/*
-display: grid; FASTEST/SIMPLEST WAY OF CENTERING SOMETHING INSIDE
-place-items: center; FASTEST/SIMPLEST WAY OF CENTERING SOMETHING INSIDE
-*/
 
 
 
@@ -207,5 +196,15 @@ place-items: center; FASTEST/SIMPLEST WAY OF CENTERING SOMETHING INSIDE
         flex-direction: row;
     }
 
+    .block-container {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-height: 700px) {
+
+    .block-container {
+        font-size: 2rem;
+    }
 
 }

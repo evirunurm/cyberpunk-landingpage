@@ -60,7 +60,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding: 0 1.5em;
+    padding: 0 2em;
 }
 
 .brand-img {
@@ -89,13 +89,13 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    top: 10vh;
-    right: -200px;
+    right: 0;
+    top: -300px;
     transition: 0.25s ease-in;
 }
 
 input[name="mobileMenu"]:checked ~ .mobile-nav {
-    right: 0;
+    top: 10vh;
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
@@ -164,6 +164,25 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     width: 100%;
     max-width: 1200px;
     mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND IS VISIBLE THOUGH*/
+}
+
+.video-player { /* SIZE OF THE VIDEO */
+    position: relative;
+    width: 40vw;
+    max-width: 600px;
+    height: 30vh;
+    bottom: -1em;
+    left: 10%;
+    margin-top: 2em;
+    clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
+}
+
+.video {
+    position: absolute;
+    top: 0; /* CENTER */
+    left: 0; /* CENTER */
+    width: 100%; /* FULL WIDTH */
+    height: 100%; /* FULL HEIGHT */
 }
 
 /*************/
@@ -265,6 +284,8 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 }
 
 
+
+
 @media (min-width: 600px) {
     .mobile {
         display: none;
@@ -284,4 +305,22 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
         width: 50%;
     }
 
+    .first-section {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        padding-bottom: 2em;
+    }
+
+    .first-section .button {
+        font-size: 1rem;
+        position: relative;
+        bottom: -3.5em;
+        left: 10%;
+    }
+}
+
+@media (max-height: 775px) {
+    .video-player {
+        display: none;
+    }
 }
