@@ -13,6 +13,11 @@
     margin: 0;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 /******************/
 /* RESPONSIVENESS */
 /******************/
@@ -45,6 +50,10 @@ body {
 /* HIDE THE CHECKBOX OF THE MENU */
 input[name="mobileMenu"] {
     display: none;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 /*******/
@@ -172,7 +181,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     max-width: 600px;
     height: 30vh;
     bottom: -1em;
-    left: 10%;
+    right: 10vw;
     margin-top: 2em;
     clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
 }
@@ -263,7 +272,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 .game-info-text-container h3 {
     font-size: 1.8rem;
     padding-bottom: 0.75em;
-    border-bottom: 1px solid #030303;
+    border-bottom: 1px solid #030303; /* BLACK */
     margin-bottom: 1em;
     position: relative; /* FOR THE :AFTER'S ABSOLUTE POSITIONING TO WORK */
 }
@@ -272,7 +281,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 .game-info-text-container h3:after {
     content: "";
     position: absolute;
-    background: #030303;
+    background: #030303; /* BLACK */
     height: 5px;
     width: 15%;
     bottom: -5px; /* HAS TO BE THE SAME AS HEIGHT, BUT NEGATIVE */
@@ -283,10 +292,117 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     width: 100%; /* TODO: DELETE */
 }
 
+/**********/
+/* FOOTER */
+/**********/
 
+footer {
+    background: #F7F100; /* YELLOW */
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+footer > section {
+    border-bottom: 1px solid #030303; /* BLACK */
+    padding: 2em 0;
+    width: 100%;
+    max-width: 1000px;
+}
 
+/* NEWSLETTER */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.footer-newsletter h3 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.footer-newsletter div {
+    text-align: center;
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+/* TERMS */
+
+.terms {
+    padding-left: 2em;
+}
+
+.terms ul {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.terms ul li:before { /* CUSTOM LIST STYLE */
+    content: "x ";
+    font-weight: bold;
+}
+
+.terms ul li:hover {
+    text-decoration: line-through;
+}
+
+/* COOKIES */
+
+.cookies {
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center; /* SO THE PARAGRAPH STAYS ON THE CNTER WHEN SHORTENED */
+    justify-content: center;
+    border: none;
+}
+
+.cookies p {
+    max-width: 400px;
+    font-size: 0.9em;
+    line-height: 1.7;
+}
+
+/* EXTRA LINKS */
+
+.extra-links {
+    background: #030303;
+    color: white;
+}
+
+.extra-links a {
+    color: white;
+}
+
+.extra-links ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    font-size: 0.9rem;
+}
+
+.extra-links a:hover {
+    text-decoration: line-through;
+}
+
+/* FOR DESKTOP */
 @media (min-width: 600px) {
+
+    /* GENERAL/NAV */
     .mobile {
         display: none;
     }
@@ -295,6 +411,22 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
         display: flex;
     }
 
+    /* SECTION 1 */
+    .first-section {
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        padding-bottom: 2em;
+        align-items: flex-end;
+    }
+
+    .first-section .button {
+        font-size: 1rem;
+        position: relative;
+        bottom: -3.5em;
+        right: 20vw;
+    }
+
+    /* SECTION 3 */
     .game-info-container {
         flex-direction: row;
         align-items: start;
@@ -305,20 +437,14 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
         width: 50%;
     }
 
-    .first-section {
-        flex-direction: column-reverse;
-        justify-content: flex-start;
-        padding-bottom: 2em;
-    }
+    /* FOOTER */
 
-    .first-section .button {
-        font-size: 1rem;
-        position: relative;
-        bottom: -3.5em;
-        left: 10%;
+    .extra-links {
+        margin: 0 3em;
     }
 }
 
+/* HIDE THE VIDEOPLAYER WHEN THERE'S NOT ENOUGH VERTICAL SPACE */
 @media (max-height: 775px) {
     .video-player {
         display: none;
