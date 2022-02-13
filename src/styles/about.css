@@ -129,11 +129,9 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     text-decoration: line-through;
 }
 
-/********/
-/* MAIN */
-/********/
-
+/*************/
 /* SECTION 1 */
+/*************/
 
 .firstSection {
     display: flex;
@@ -177,7 +175,26 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     max-width: 200px;
 }
 
+/*************/
+/* SECTION 2 */
+/*************/
 
+.secondSection {
+    color: white;
+    padding: 2em;
+    overflow: hidden;
+}
+
+
+table, th, td {
+    border: 2px solid #F7F100;
+    border-collapse: collapse; /* SO BORDERS FUSE TOGETHER */
+}
+.desktop-table th, .desktop-table td {
+    padding: 1em;
+}
+
+.mobile-table th, .mobile-table td
 
 
 
