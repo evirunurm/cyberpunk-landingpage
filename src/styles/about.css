@@ -44,7 +44,8 @@ body {
 }
 
 .button:hover {
-    /* TODO */
+    background: #030303;
+    box-shadow: 0 0 0 1px #F7F100; /* YELLOW */
 }
 
 /* HIDE THE CHECKBOX OF THE MENU */
@@ -58,6 +59,11 @@ input[name="mobileMenu"] {
 
 html {
     scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICK, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
+}
+
+a:hover {
+    color: #FF003C !important;
+    text-decoration: line-through !important;
 }
 
 /*******/
@@ -117,9 +123,6 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     text-decoration: none;
 }
 
-.mobile-nav a:hover {
-    text-decoration: line-through;
-}
 
 /***************************/
 /* MAC USERS (AND WINDOWS) */
@@ -139,9 +142,6 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     font-size: 1.1em;
 }
 
-.desktop a:hover {
-    text-decoration: line-through;
-}
 
 /*************/
 /* SECTION 1 */
@@ -425,10 +425,6 @@ footer > section {
     text-align: center;
     gap: 1em;
     font-size: 0.9rem;
-}
-
-.extra-links a:hover {
-    text-decoration: line-through;
 }
 
 

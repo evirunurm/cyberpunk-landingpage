@@ -18,6 +18,7 @@ a {
     text-decoration: none;
 }
 
+
 /******************/
 /* RESPONSIVENESS */
 /******************/
@@ -32,19 +33,23 @@ a {
 body {
     font-family: Poppins, sans-serif;
     overflow-x: hidden;
-    background: #030303;
+    background: #030303; /* BLACK */
 }
 
 .button {
     padding: 0.85em 4em;
     color: white;
     border: none;
-    background: #FF003C;
+    background: #FF003C; /* PINK */
     cursor: pointer;
+    transition: 0.15s ease-in-out;
+    font-weight: 700;
+    position: relative;
 }
 
 .button:hover {
- /* TODO */
+    background: #030303;
+    box-shadow: 0 0 0 1px #F7F100; /* YELLOW */
 }
 
 /* HIDE THE CHECKBOX OF THE MENU */
@@ -54,6 +59,11 @@ input[name="mobileMenu"] {
 
 .bold {
     font-weight: 700;
+}
+
+a:hover {
+    color: #FF003C !important;
+    text-decoration: line-through !important;
 }
 
 /*******/
