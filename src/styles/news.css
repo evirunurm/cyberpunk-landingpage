@@ -191,21 +191,9 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 
 }
 
-
-
-
-
-
-
-
 /*************/
 /* SECTION 2 */
 /*************/
-
-.second-section{
-    padding: 200px 0px;
-    /*todo: borrar*/
-}
 
 .second-section-titulo{
     background-color: #F7F100;
