@@ -111,6 +111,7 @@ nav {
     right: 0;
     top: -300px;
     transition: 0.25s ease-in;
+    z-index:10;
 }
 
 input[name="mobileMenu"]:checked ~ .mobile-nav {
@@ -158,13 +159,16 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     z-index: -10;
     background-color: #F7F100; /* Yellow */
     bottom: 0;
+
 }
 
 .big-boy {
     position: absolute;
-    left: -100px; /* THIS WILL HAVE TO CHANGE IN MEDIA QUERY FOR DESKTOP */
+    left:-200px; /* THIS IS CHANGED IN MEDIA QUERY FOR DESKTOP */
     bottom: -15px;
     height: 90%;
+    transition: 0.5s;
+
 }
 
 .cyberpunk-image{
@@ -174,7 +178,6 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     flex-direction:column;
     align-items:center;
     max-width:1100px;
-    background:rgba(0,0,0,0.2);
     overflow-x:hidden;
 }
 
@@ -186,10 +189,23 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 .newsletter{
    position:relative;
    bottom:0.4em;
-   font-size:4rem;
+   font-size:10vw;
    color:rgba(0,0,0,0.2);
-
+    font-weight:900;
+    transition:0.5s;
 }
+
+.first-section > a {
+    display: block;
+}
+
+.first-section a{
+    position:relative;
+    align-self:center;
+    left:26vw;
+}
+
+
 
 /*************/
 /* SECTION 2 */
@@ -384,20 +400,37 @@ footer > section {
         display: flex;
     }
 
+
+
     nav {
         flex-direction: row;
     }
 
     .cyberpunk-image{
-        margin-right:10vw;
+        margin: 5em 12vw 0 12vw;
+    }
+
+    .big-boy{
+        left: -100px;
     }
 
     .newsletter{
-        font-size:5rem;
+        font-size:7vw;
     }
     /* FOOTER */
 
     .extra-links {
         margin: 0 3em;
     }
+}
+
+@media (max-width: 1200px){
+    .cyberpunk-image{
+        margin: 5em 2vw 0 0;
+    }
+
+    .big-boy{
+        height:80%;
+    }
+
 }
