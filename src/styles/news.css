@@ -286,6 +286,69 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
         padding-bottom: 2em;
     }
 }
+
+/*************/
+/* SECTION 3 */
+/*************/
+
+.third-section{
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.join-tittle{
+    background:#F7F100;
+    color:#030303;
+    width:100%;
+    text-align:center;
+    padding:1em;
+}
+
+.news-form-wrapper{
+    padding:3em;
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+
+}
+
+.news-email-label{
+    padding-bottom:0.7em;
+}
+
+.news-email-text{
+    margin-bottom:1.5em;
+    color:white;
+    font-size:1rem;
+    padding:0.25em;
+    background:#030303;
+    border:2px solid rgba(255,255,255,0.5);
+}
+
+.news-birth-label{
+    padding-bottom:0.7em;
+}
+
+.news-birth-select{
+    margin-bottom:1em;
+    background:#030303;
+    color:white;
+}
+.news-text-check{
+    font-size:0.9rem;
+
+}
+
+.news-form-wrapper .button{
+    align-self:end;
+    margin-top:2em;
+}
+.news-birth-select option{
+padding:123em;
+}
+
 /**********/
 /* FOOTER */
 /**********/
