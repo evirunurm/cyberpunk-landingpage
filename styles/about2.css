@@ -230,35 +230,68 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 /* SECTION 3 */
 /*************/
 
-
+.thirdSection{
+    margin-bottom: 3em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: 4em;
+}
 .thirdSection > div{
     display: flex;
     flex-direction: column;
-    gap: 1em;
     align-items: center;
+    gap: 4em;
 }
 .img-container{
-    width: 20vw;
-    height: 30em;
+    min-height: 330px;
+    max-height: 500px;
+    min-width: 180px;
     overflow: hidden;
-    background-color: #FF003C;
     position: relative;
 }
 .life-path{
-    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+.life-path .description{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.description:hover{
+    opacity: 1;
+}
+.description p{
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .img-container > img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top:0;
-    left:0;
+    object-position: top left;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
+    /* SECTION 3 */
     .thirdSection > div {
         flex-direction: row;
         justify-content: center;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .img-container{
+        width: 20vw;
+        height: 25vw;
     }
     }
 /**********/
@@ -392,7 +425,6 @@ footer > section {
         font-size: 2.5rem;
     }
 
-    /* SECTION 3 */
 
     
 
