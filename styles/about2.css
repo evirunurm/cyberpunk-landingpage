@@ -1,0 +1,548 @@
+/* CONSTANTS */
+/* PINK: #FF003C */
+/* BLACK: #030303 */
+/* YELLOW: #F7F100 */
+
+
+/*****************/
+/* NORMALIZATION */
+/*****************/
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/******************/
+/* RESPONSIVENESS */
+/******************/
+.desktop {
+    display: none;
+}
+
+/***********/
+/* GENERAL */
+/***********/
+
+body {
+    font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+    background: #030303;
+}
+
+.button {
+    padding: 0.85em 4em;
+    color: white;
+    border: none;
+    background: #FF003C;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #030303;
+    box-shadow: 0 0 0 1px #F7F100; /* YELLOW */
+}
+
+/* HIDE THE CHECKBOX OF THE MENU */
+input[name="mobileMenu"] {
+    display: none;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+html {
+    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICKED, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
+}
+
+a:hover {
+    color: #FF003C !important;
+    text-decoration: line-through !important;
+}
+
+/*******/
+/* NAV */
+/*******/
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    padding: 0 2em; /* PADDING ON BORDER */
+}
+
+.brand-img {
+    height: 80%;
+}
+
+.nav-burger {
+    border: none;
+    background: #FF003C; /* PINK */
+    height: 50%;
+    padding: .75em 0.75em; /* CENTER THE TOMATO */
+    cursor: pointer;
+}
+
+.nav-burger img {
+    height: 100%;
+    cursor: pointer;
+}
+.mobile-nav {
+    position: absolute;
+    background: #F7F100;
+    color: #030303;
+    padding: 2.5em 1.5em;
+    list-style-type: none; /* NO MORE BULLETS >:( */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    right: 0;
+    top: -300px;
+    transition: 0.25s ease-in-out;
+    font-weight: bold;
+}
+
+input[name="mobileMenu"]:checked ~ .mobile-nav {
+    top: 10vh;
+}
+
+.mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
+    color: #030303;
+    text-decoration: none;
+}
+
+
+/***************************/
+/* MAC USERS (AND WINDOWS) */
+/***************************/
+
+.desktop {
+    display: none; /* MOBILE FIRST */
+    justify-content: space-between;
+    width: 300px;
+    list-style-type: none; /* STOP BULLETS */
+}
+
+.desktop a {
+    text-decoration: none;
+    color: #F7F100; /* BLACK */
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+
+/*************/
+/* SECTION 1 */
+/*************/
+
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    gap: 2em;
+    padding-bottom: 10vh;
+}
+
+.logo {
+    width: 100%;
+    max-width: 1000px;
+    mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND */
+}
+
+.down-arrows {
+    max-width: 3em;
+    overflow: hidden;
+    margin-top: 2em;
+}
+
+.block-container {
+    width: 45%;
+    height: 40%;
+    min-width: 280px;
+    background: #F7F100; /* YELLOW */
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    z-index: -10; /* SO IT DOESNT APPEAR OVER THE BUTTON */
+    font-size: 2rem;
+    padding: 2em 2em 2em 2em;
+    font-weight: bold;
+    clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
+    /* CLIP-PATH PARA HACER LA FORMA AL CUADRADO. CADA COPA-SEPARATED THING REPRESENTA UN PUNTO (X, Y) */
+}
+
+.block-container p { /* TEXT INSIDE YELLOW BOX */
+    max-width: 200px;
+}
+
+/*************/
+/* SECTION 2 */
+/*************/
+.secondSection{
+    color: #030303;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2em;
+}
+
+.secondSection h3{
+    color:white;
+    margin-bottom: 3em;
+}
+
+/* TABLES */
+
+table {
+    border-collapse: collapse;
+}
+
+.secondSection th{
+    background-color: #F7F100;
+    color:#030303;
+    border: 1px solid#030303;
+    padding: 1em 2em;
+}
+
+.secondSection td{
+    color: white;
+    border: 1px solid#F7F100;
+    padding: 2em 2em;
+    text-align: center;
+}
+
+/* DESKTOP TABLES TABLES */
+.desktop-table{
+    display: none;
+    margin-bottom: 5em;
+}
+
+/* MOBILE TABLES */
+
+.tables-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+/*************/
+/* SECTION 3 */
+/*************/
+
+.thirdSection{
+    margin-bottom: 3em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 2em 4em 2em;
+    gap: 4em;
+}
+
+.thirdSection > div {
+    color: white;
+    display: flex;
+    flex-direction: column; /* TODO: MEDIAQUERY */
+    align-items: center;
+    gap: 4em;
+}
+
+.life-path {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.life-path p {
+    font-weight: bold;
+}
+
+.img-container {
+    position: relative; /* SO THE IMAGE DOESNT NOT OVERLAP THE CONTAINER */
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.img-container:after {
+    content: "";
+    position: absolute;
+    height: 2.5em;
+    width: 2.5em;
+    background: #030303; /* BACKGROUND COLOR, SO IT APPEARS CUT */
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%); /* TO MAKE A TRIANGLE */
+}
+
+.img-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.img-container:hover > .description {
+    opacity: 1;
+}
+
+.img-container .description {
+    opacity: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    line-height: 1.5;
+}
+.img-container .description p {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.img-container .description p:after {
+    content:"...";
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    bottom: 0.5rem;
+    right: 0;
+    padding: 2em;
+    gap: 4em;
+}
+
+.thirdSection > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+}
+.img-container{
+    min-height: 330px;
+    max-height: 500px;
+    min-width: 180px;
+    overflow: hidden;
+    position: relative;
+}
+.img-container::after{
+    content: "";
+    height: 4em;
+    width: 4em;
+    background-color: #030303;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+.life-path{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+.life-path .description{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.description:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.description p{
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.img-container > img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: top left;
+}
+
+
+/**********/
+/* FOOTER */
+/**********/
+
+footer {
+    background: #F7F100; /* YELLOW */
+    padding: 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > section {
+    border-bottom: 1px solid #030303; /* BLACK */
+    padding: 2em 0;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* NEWSLETTER */
+
+.footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+.footer-newsletter h3 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.footer-newsletter div {
+    text-align: center;
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+/* TERMS */
+
+.terms {
+    padding-left: 2em;
+}
+
+.terms ul {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+
+.terms ul li:before { /* CUSTOM LIST STYLE */
+    content: "x ";
+    font-weight: bold;
+}
+
+.terms ul li:hover {
+    text-decoration: line-through;
+}
+
+/* COOKIES */
+
+.cookies {
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center; /* SO THE PARAGRAPH STAYS ON THE CNTER WHEN SHORTENED */
+    justify-content: center;
+    border: none;
+}
+
+.cookies p {
+    max-width: 400px;
+    font-size: 0.9em;
+    line-height: 1.7;
+}
+
+/* EXTRA LINKS */
+
+.extra-links {
+    background: #030303;
+    color: white;
+}
+
+.extra-links a {
+    color: white;
+}
+
+.extra-links ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 800px) {
+    /* SECTION 3 */
+    .thirdSection > div {
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .img-container{
+        width: 20vw;
+        height: 25vw;
+    }
+    }
+
+@media (min-width: 600px) {
+    /* GENERAL/NAV */
+    .desktop-table{
+        display: flex;
+    }
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    /* SECTION 1 */
+
+    .block-container {
+        font-size: 2.5rem;
+    }
+
+    /* SECTION 2 */
+
+    .desktop-table {
+        display: block;
+    }
+
+
+    /* FOOTER */
+
+    .extra-links {
+        margin: 0 3em;
+    }
+}
+
+@media (max-height: 700px) {
+
+    .block-container {
+        font-size: 2rem;
+    }
+
+}

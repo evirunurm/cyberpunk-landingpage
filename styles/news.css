@@ -18,6 +18,7 @@ a {
     text-decoration: none;
 }
 
+
 /******************/
 /* RESPONSIVENESS */
 /******************/
@@ -29,18 +30,22 @@ a {
 /* GENERAL */
 /***********/
 
+
 body {
     font-family: Poppins, sans-serif;
     overflow-x: hidden;
-    background: #030303;
+    background: #030303; /* BLACK */
 }
 
 .button {
     padding: 0.85em 4em;
     color: white;
     border: none;
-    background: #FF003C;
+    background: #FF003C; /* PINK */
     cursor: pointer;
+    transition: 0.15s ease-in-out;
+    font-weight: 700;
+    position: relative;
 }
 
 .button:hover {
@@ -57,13 +62,13 @@ input[name="mobileMenu"] {
     font-weight: 700;
 }
 
-html {
-    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICKED, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
-}
-
 a:hover {
     color: #FF003C !important;
     text-decoration: line-through !important;
+}
+
+html {
+    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICKED, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
 }
 
 /*******/
@@ -80,7 +85,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding: 0 2em; /* PADDING ON BORDER */
+    padding: 0 2em;
 }
 
 .brand-img {
@@ -91,7 +96,7 @@ nav {
     border: none;
     background: #FF003C; /* PINK */
     height: 50%;
-    padding: .75em 0.75em; /* CENTER THE TOMATO */
+    padding: .85em 0.75em; /* CENTER THE TOMATO */
     cursor: pointer;
 }
 
@@ -99,10 +104,11 @@ nav {
     height: 100%;
     cursor: pointer;
 }
+
 .mobile-nav {
     position: absolute;
-    background: #F7F100;
-    color: #030303;
+    background: #030303;
+    color: white;
     padding: 2.5em 1.5em;
     list-style-type: none; /* NO MORE BULLETS >:( */
     display: flex;
@@ -110,8 +116,8 @@ nav {
     gap: 1.5em;
     right: 0;
     top: -300px;
-    transition: 0.25s ease-in-out;
-    font-weight: bold;
+    transition: 0.25s ease-in;
+    z-index:10;
 }
 
 input[name="mobileMenu"]:checked ~ .mobile-nav {
@@ -119,17 +125,16 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
-    color: #030303;
+    color: white;
     text-decoration: none;
 }
-
 
 /***************************/
 /* MAC USERS (AND WINDOWS) */
 /***************************/
 
 .desktop {
-    display: none; /* MOBILE FIRST */
+    display: none;
     justify-content: space-between;
     width: 300px;
     list-style-type: none; /* STOP BULLETS */
@@ -137,194 +142,204 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 
 .desktop a {
     text-decoration: none;
-    color: #F7F100; /* BLACK */
+    color: #030303;
     font-weight: 700;
     font-size: 1.1em;
 }
+  /************/
+ /* SECTION 1*/
+/************/
 
-
-/*************/
-/* SECTION 1 */
-/*************/
-
-.firstSection {
+.first-section{
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100vh;
-    gap: 2em;
-    padding-bottom: 10vh;
+    align-items:end;
 }
 
-.logo {
+.background-image {
     width: 100%;
-    max-width: 1000px;
-    mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND */
-}
-
-.down-arrows {
-    max-width: 3em;
-    overflow: hidden;
-    margin-top: 2em;
-}
-
-.block-container {
-    width: 45%;
-    height: 40%;
-    min-width: 280px;
-    background: #F7F100; /* YELLOW */
+    height: 100%;  /* Full container size */
+    overflow: hidden; /* So the image doesnt push containers border */
     position: absolute;
-    bottom: 40%;
-    left: 0;
-    z-index: -10; /* SO IT DOESNT APPEAR OVER THE BUTTON */
-    font-size: 2rem;
-    padding: 2em 2em 2em 2em;
-    font-weight: bold;
-    clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
-    /* CLIP-PATH PARA HACER LA FORMA AL CUADRADO. CADA COPA-SEPARATED THING REPRESENTA UN PUNTO (X, Y) */
+    z-index: -10;
+    background-color: #F7F100; /* Yellow */
+    bottom: 0;
+
 }
 
-.block-container p { /* TEXT INSIDE YELLOW BOX */
-    max-width: 200px;
+.big-boy {
+    position: absolute;
+    left:-200px; /* THIS IS CHANGED IN MEDIA QUERY FOR DESKTOP */
+    bottom: -15px;
+    height: 90%;
+    transition: 0.5s;
+
 }
+
+.cyberpunk-image{
+    width:100%;
+    margin-top:5em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    max-width:1100px;
+    overflow-x:hidden;
+}
+
+.logo{
+    mix-blend-mode: difference;
+    width:100%;
+}
+
+.newsletter{
+   position:relative;
+   bottom:0.4em;
+   font-size:10vw;
+   color:rgba(0,0,0,0.2);
+    font-weight:900;
+    transition:0.5s;
+}
+
+.first-section > a {
+    display: block;
+}
+
+.first-section a{
+    position:relative;
+    align-self:center;
+    left:26vw;
+}
+
+
 
 /*************/
 /* SECTION 2 */
 /*************/
-.secondSection{
-    color: #030303;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2em;
+.second-section{
+    padding-top: 6em;
+    padding-bottom: 3em;
 }
-
-/* TABLES */
-
-table {
-    border-collapse: collapse;
-}
-
-.secondSection h3{
-    color:white;
-    margin-bottom: 3em;
-}
-
-.secondSection th{
+.second-section-titulo{
     background-color: #F7F100;
-    color:#030303;
-    border: 1px solid#030303;
-    padding: 1em 2em;
+    display: inline;
+    padding: 1em 2em 1em 10%;
+    position: relative;
 }
 
-.secondSection td{
-    color: white;
-    border: 1px solid#F7F100;
-    padding: 2em 2em;
-    text-align: center;
+.new{
+    background-color: aqua;
 }
-
-/* DESKTOP TABLES TABLES */
-.desktop-table{
-    display: none;
-    margin-bottom: 5em;
-}
-
-/* MOBILE TABLES */
-
-.tables-wrapper {
+.news-wrapper{
     display: flex;
     flex-direction: column;
-    gap: 3em;
+    gap: 1.5em;
+    margin: 1em 10%;
+}
+.second-section-titulo + .news-wrapper{
+    margin-top: 4em;
+}
+.second-section-titulo::before{
+    content: "";
+    height: 0.5em;
+    width: 2em;
+    background-color: #030303;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    clip-path: polygon(0% 0%,35% 100%, 100% 100%, 100% 0%);
+
+}
+.new{
+    padding: 2em 3em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    cursor: pointer;
+    position: relative;
+
+}
+.new::before{
+    content: "";
+    height: 4em;
+    width: 4em;
+    background-color: #030303;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+
+}
+.new:hover{
+    background-color: #FF003C;
+}
+.new-titulo{
+    margin-bottom: 2em;
+}
+.new-fecha{
+    opacity: 0.7;
 }
 
 /*************/
 /* SECTION 3 */
 /*************/
 
-.thirdSection {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2em 2em 4em 2em;
-    gap: 4em;
+.third-section{
+    color:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.thirdSection > div {
-    color: white;
-    display: flex;
-    flex-direction: column; /* TODO: MEDIAQUERY */
-    align-items: center;
-    gap: 4em;
+.join-tittle{
+    background:#F7F100;
+    color:#030303;
+    width:100%;
+    text-align:center;
+    padding:1em;
 }
 
-.life-path {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2em;
+.news-form-wrapper{
+    padding:3em;
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+
 }
 
-.life-path p {
-    font-weight: bold;
+.news-email-label{
+    padding-bottom:0.7em;
 }
 
-.img-container {
-    position: relative; /* SO THE IMAGE DOESNT NOT OVERLAP THE CONTAINER */
-    max-height: 500px;
-    overflow: hidden;
+.news-email-text{
+    margin-bottom:1.5em;
+    color:white;
+    font-size:1rem;
+    padding:0.25em;
+    background:#030303;
+    border:2px solid rgba(255,255,255,0.5);
 }
 
-.img-container:after {
-    content: "";
-    position: absolute;
-    height: 2.5em;
-    width: 2.5em;
-    background: #030303; /* BACKGROUND COLOR, SO IT APPEARS CUT */
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    clip-path: polygon(0% 100%, 100% 100%, 100% 0%); /* TO MAKE A TRIANGLE */
+.news-birth-label{
+    padding-bottom:0.7em;
 }
 
-.img-container img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+.news-birth-select{
+    margin-bottom:1em;
+    background:#030303;
+    color:white;
+}
+.news-text-check{
+    font-size:0.9rem;
+
 }
 
-.img-container:hover > .description {
-    opacity: 1;
+.news-form-wrapper .button{
+    align-self:end;
+    margin-top:2em;
 }
-
-.img-container .description {
-    opacity: 0;
-    position: absolute;
-    background: rgba(0,0,0,0.5);
-    padding: 2em;
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-    line-height: 1.5;
-}
-.img-container .description p {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    position: relative;
-}
-
-.img-container .description p:after {
-    content:"...";
-    position: absolute;
-    height: 1rem;
-    width: 1rem;
-    bottom: 0.5rem;
-    right: 0;
+.news-birth-select option{
+padding:123em;
 }
 
 
@@ -442,30 +457,23 @@ footer > section {
         display: flex;
     }
 
+
+
     nav {
         flex-direction: row;
     }
 
-    /* SECTION 1 */
-
-    .block-container {
-        font-size: 2.5rem;
+    .cyberpunk-image{
+        margin: 5em 12vw 0 12vw;
     }
 
-    /* SECTION 2 */
-
-    .desktop-table {
-        display: block;
+    .big-boy{
+        left: -100px;
     }
 
-
-    /* SECTION 3 */
-
-    .thirdSection > div {
-        flex-direction: row;
+    .newsletter{
+        font-size:7vw;
     }
-
-
     /* FOOTER */
 
     .extra-links {
@@ -473,10 +481,27 @@ footer > section {
     }
 }
 
-@media (max-height: 700px) {
-
-    .block-container {
-        font-size: 2rem;
+@media (max-width: 1200px){
+    .cyberpunk-image{
+        margin: 5em 2vw 0 0;
     }
 
+    .big-boy{
+        height:80%;
+    }
+
+}
+
+@media (min-width: 800px) {
+    .news-wrapper{
+        flex-direction: row;
+        margin: 1.5em 25%;
+    }
+    .second-section-titulo{
+        padding: 0.5em 2em 0.5em 25%;
+    }
+    .second-section{
+        padding-top: 4em;
+        padding-bottom: 2em;
+    }
 }
