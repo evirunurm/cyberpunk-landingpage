@@ -58,7 +58,7 @@ input[name="mobileMenu"] {
 }
 
 html {
-    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICK, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
+    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICKED, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
 }
 
 a:hover {
@@ -198,22 +198,27 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 2em;
 }
-/* DESKTOP TABLES TABLES */
-.desktop-table{
+
+/* TABLES */
+
+table {
     border-collapse: collapse;
-    margin-bottom: 5em;
 }
+
 .secondSection h3{
     color:white;
     margin-bottom: 3em;
 }
+
 .secondSection th{
     background-color: #F7F100;
     color:#030303;
     border: 1px solid#030303;
     padding: 1em 2em;
 }
+
 .secondSection td{
     color: white;
     border: 1px solid#F7F100;
@@ -221,12 +226,106 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     text-align: center;
 }
 
+/* DESKTOP TABLES TABLES */
+.desktop-table{
+    display: none;
+    margin-bottom: 5em;
+}
+
 /* MOBILE TABLES */
+
+.tables-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
 
 /*************/
 /* SECTION 3 */
 /*************/
 
+.thirdSection {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 2em 4em 2em;
+    gap: 4em;
+}
+
+.thirdSection > div {
+    color: white;
+    display: flex;
+    flex-direction: column; /* TODO: MEDIAQUERY */
+    align-items: center;
+    gap: 4em;
+}
+
+.life-path {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.life-path p {
+    font-weight: bold;
+}
+
+.img-container {
+    position: relative; /* SO THE IMAGE DOESNT NOT OVERLAP THE CONTAINER */
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.img-container:after {
+    content: "";
+    position: absolute;
+    height: 2.5em;
+    width: 2.5em;
+    background: #030303; /* BACKGROUND COLOR, SO IT APPEARS CUT */
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%); /* TO MAKE A TRIANGLE */
+}
+
+.img-container img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.img-container:hover > .description {
+    opacity: 1;
+}
+
+.img-container .description {
+    opacity: 0;
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    line-height: 1.5;
+}
+.img-container .description p {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.img-container .description p:after {
+    content:"...";
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    bottom: 0.5rem;
+    right: 0;
+}
 
 
 /**********/
@@ -349,13 +448,16 @@ footer > section {
 
     /* SECTION 1 */
 
+    .block-container {
+        font-size: 2.5rem;
+    }
+
+    /* SECTION 2 */
+
     .desktop-table {
         display: block;
     }
 
-    .block-container {
-        font-size: 2.5rem;
-    }
 
     /* SECTION 3 */
 
