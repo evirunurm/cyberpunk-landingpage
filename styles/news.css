@@ -188,17 +188,17 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 }
 
 .logo{
-    mix-blend-mode: difference;
+    mix-blend-mode: difference;/* with the difference you will always see the logo*/
     width:100%;
 }
 
 .newsletter{
    position:relative;
    bottom:0.4em;
-   font-size:10vw;
+   font-size:10vw;/*font size will be the 10% of the view width*/
    color:rgba(0,0,0,0.2);
     font-weight:900;
-    transition:0.5s;
+    transition:0.5s;/*smooth transitions when the image size is changed*/
 }
 
 .first-section > a {
@@ -315,9 +315,9 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     margin-bottom:1.5em;
     color:white;
     font-size:1rem;
-    padding:0.25em;
+    padding:0.25em;/*little padding for a little text*/
     background:#030303;
-    border:2px solid rgba(255,255,255,0.5);
+    border:2px solid rgba(255,255,255,0.5);/*translucent black border*/
 }
 
 .news-birth-label{
@@ -329,7 +329,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     padding:0.4em 1em;
     background:#030303;
     color:white;
-    border:2px solid rgba(255,255,255,0.5);
+    border:2px solid rgba(255,255,255,0.5);/*translucent black border*/
 }
 .news-text-check{
     font-size:0.9rem;
@@ -337,13 +337,13 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 }
 
 .news-form-wrapper .button{
-    align-self:end;
+    align-self:end; /*its the only item in the right*/
     margin-top:2em;
 }
 
 .news-birth-select option{
       background:#030303;
-      font-size:1.2rem;
+      font-size:1.2rem; /*bigger select options*/
 }
 
 

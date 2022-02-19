@@ -58,7 +58,7 @@ input[name="mobileMenu"] {
 }
 
 html {
-    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICK, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
+    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICK, THE BROWSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
 }
 
 a:hover {
