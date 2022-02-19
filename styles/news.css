@@ -333,8 +333,10 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 
 .news-birth-select{
     margin-bottom:1em;
+    padding:0.4em 1em;
     background:#030303;
     color:white;
+    border:2px solid rgba(255,255,255,0.5);
 }
 .news-text-check{
     font-size:0.9rem;
@@ -345,8 +347,10 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     align-self:end;
     margin-top:2em;
 }
+
 .news-birth-select option{
-padding:123em;
+      background:#030303;
+      font-size:1.2rem;
 }
 
 /**********/
