@@ -79,11 +79,11 @@
     </section>
     <section class="third-section" id="join">
         <h2 class="join-tittle">JOIN OUR NEWSLETTER</h2>
-        <div class="news-form-wrapper">
+        <form method="GET" action="" class="news-form-wrapper">
             <label for="email" class="news-email-label">EMAIL</label>
-            <input type="email" id="email" name="email" class="news-email-text">
+            <input required type="email" id="email" name="email" class="news-email-text">
             <label for="birthYear" class="news-birth-label">BIRTH YEAR</label>
-            <select id="birthYear" name="birthYear" class="news-birth-select">
+            <select required id="birthYear" name="birthYear" class="news-birth-select">
                 <option disabled selected>YEAR</option>
                 <option value="1940">1941</option>
                 <option value="1941">1941</option>
@@ -174,7 +174,7 @@
                 <label for="commercialEmails" class="news-text-check">I want to receive commercial emails from partnered companies.</label>
             </div>
             <input class="button" type="submit" value="JOIN">
-        </div>
+        </form>
         </section>
     </main>
     <footer>
