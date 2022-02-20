@@ -2,6 +2,7 @@
 /* PINK: #FF003C */
 /* BLACK: #030303 */
 /* YELLOW: #F7F100 */
+/* AGUA: #02D7F2 */
 
 
 /*****************/
@@ -58,7 +59,7 @@ input[name="mobileMenu"] {
 }
 
 html {
-    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICK, THE BROWSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
+    scroll-behavior: smooth; /* WHEN "LEARN MORE" IS CLICKED, THE BROSER SCROLLS TO THE LIFE PATHS SECTION, INSTEAD OF JUMPING DIRECTLY */
 }
 
 a:hover {
@@ -80,7 +81,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding: 0 2em; /* PADDING ON BORDER */
+    padding: 0 2em;
 }
 
 .brand-img {
@@ -104,30 +105,38 @@ nav {
     cursor: pointer;
 }
 
+.mobile-nav-wrapper {
+    height: 500px;
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
 .mobile-nav {
     position: absolute;
-    background: #F7F100;
-    color: #030303;
+    background: #02D7F2;
     padding: 2.5em 1.5em;
     list-style-type: none; /* NO MORE BULLETS >:( */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    right: 0;
-    top: -300px;
-    transition: 0.25s ease-in-out;
-    font-weight: bold;
+    width: 200px;
+    left: -500px;
+    transition: 0.25s ease-in;
 }
 
-input[name="mobileMenu"]:checked ~ .mobile-nav {
-    top: 10vh;
+input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
+    left: 0;
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
-    color: #030303;
+    font-weight: bold;
+    color: black;
     text-decoration: none;
 }
-
 
 /***************************/
 /* MAC USERS (AND WINDOWS) */
@@ -197,55 +206,60 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 /*************/
 /* SECTION 2 */
 /*************/
-
-.secondSection {
-    color: white;
-    padding: 2em;
-    overflow: hidden; /* SO IT DOESNT PUSH THE TABLE OUTSIDE IN CASE IT DOESNT HAVE ENOUGH SPACE */
+.secondSection{
+    color: #030303;
     display: flex;
     flex-direction: column;
-    gap: 4em; /* SPACING AROUND TITLE AND TABLE/S */
     align-items: center;
+    justify-content: center;
+    padding: 0 2em;
 }
 
-table, th, td {
-    border: 1px solid #F7F100; /* YELLOW */
-    border-collapse: collapse; /* SO BORDERS FUSE TOGETHER */
+.secondSection h3{
+    color:white;
+    margin-bottom: 3em;
 }
+
+/* TABLES */
 
 table {
-    border: 1px solid #030303;
+    border-collapse: collapse;
 }
 
-th {
-    background: #F7F100;
-    color: #030303;
-    border: 1px solid #030303;
+.secondSection th{
+    background-color: #F7F100;
+    color:#030303;
+    border: 1px solid#030303;
+    padding: 1em 2em;
+}
+
+.secondSection td{
+    color: white;
+    border: 1px solid#F7F100;
+    padding: 2em 2em;
+    text-align: center;
 }
 
 /* DESKTOP TABLES TABLES */
-.desktop-table th, .desktop-table td {
-    padding: 1em;
-}
-
-.desktop-table {
+.desktop-table{
     display: none;
+    margin-bottom: 5em;
 }
 
 /* MOBILE TABLES */
-.mobile-table th, .mobile-table td {
-    padding: 0.5em;
-}
 
 .tables-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 3em;
 }
+
 /*************/
 /* SECTION 3 */
 /*************/
-.thirdSection {
+
+.thirdSection{
+    margin-bottom: 3em;
     color: white;
     display: flex;
     flex-direction: column;
@@ -326,6 +340,62 @@ th {
     width: 1rem;
     bottom: 0.5rem;
     right: 0;
+    padding: 2em;
+    gap: 4em;
+}
+
+.thirdSection > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+}
+.img-container{
+    min-height: 330px;
+    max-height: 500px;
+    min-width: 180px;
+    overflow: hidden;
+    position: relative;
+}
+.img-container::after{
+    content: "";
+    height: 4em;
+    width: 4em;
+    background-color: #030303;
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+.life-path{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+.life-path .description{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.description:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.description p{
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.img-container > img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: top left;
 }
 
 
@@ -432,9 +502,25 @@ footer > section {
     font-size: 0.9rem;
 }
 
+@media (min-width: 800px) {
+    /* SECTION 3 */
+    .thirdSection > div {
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+    .img-container{
+        width: 20vw;
+        height: 25vw;
+    }
+    }
 
 @media (min-width: 600px) {
     /* GENERAL/NAV */
+    .desktop-table{
+        display: flex;
+    }
     .mobile {
         display: none;
     }
@@ -449,18 +535,14 @@ footer > section {
 
     /* SECTION 1 */
 
-    .desktop-table {
-        display: block;
-    }
-
     .block-container {
         font-size: 2.5rem;
     }
 
-    /* SECTION 3 */
+    /* SECTION 2 */
 
-    .thirdSection > div {
-        flex-direction: row;
+    .desktop-table {
+        display: block;
     }
 
 
