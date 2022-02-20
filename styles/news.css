@@ -165,16 +165,14 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     z-index: -10;
     background-color: #F7F100; /* Yellow */
     bottom: 0;
-
 }
 
 .big-boy {
     position: absolute;
-    left:-200px; /* THIS IS CHANGED IN MEDIA QUERY FOR DESKTOP */
+    left: -200px; /* THIS IS CHANGED IN MEDIA QUERY FOR DESKTOP */
     bottom: -15px;
     height: 90%;
     transition: 0.5s;
-
 }
 
 .cyberpunk-image{
@@ -189,26 +187,30 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 
 .logo{
     mix-blend-mode: difference;/* with the difference you will always see the logo*/
-    width:100%;
+    width: 100%;
 }
 
 .newsletter{
-   position:relative;
-   bottom:0.4em;
-   font-size:10vw;/*font size will be the 10% of the view width*/
-   color:rgba(0,0,0,0.2);
-    font-weight:900;
-    transition:0.5s;/*smooth transitions when the image size is changed*/
+    position: relative;
+    bottom: 0.4em;
+    font-size: 10vw;/*font size will be the 10% of the view width*/
+    color: rgba(0,0,0,0.2);
+    font-weight: 900;
+    transition: 0.5s;/*smooth transitions when the image size is changed*/
 }
 
 .first-section > a {
     display: block;
 }
 
-.first-section a{
-    position:relative;
-    align-self:center;
-    left:26vw;
+.first-section a { /* BUTTON WRAPPER */
+    position: relative;
+    align-self: center;
+    left: 26vw;
+}
+
+.first-section .button {
+    font-size: 1rem;
 }
 
 
@@ -216,30 +218,34 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
 /*************/
 /* SECTION 2 */
 /*************/
-.second-section{
-    padding-top: 6em;
+.second-section {
+    padding-top: 3em;
     padding-bottom: 3em;
 }
-.second-section-titulo{
+
+.second-section-titulo {
     background-color: #F7F100;
     display: inline;
     padding: 1em 2em 1em 10%;
-    position: relative;
+    position: relative; /* FOR BEFORE */
 }
 
-.new{
+.new {
     background-color: aqua;
 }
-.news-wrapper{
+
+.news-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    margin: 1em 10%;
+    margin: 1.5em 10%; /* MARGIN BETWEEN THE BLOCK OF TWO */
 }
-.second-section-titulo + .news-wrapper{
+
+.second-section-titulo + .news-wrapper { /* THE FIRST CARD */
     margin-top: 4em;
 }
-.second-section-titulo::before{
+
+.second-section-titulo::before { /* THE TOP INCISION */
     content: "";
     height: 0.5em;
     width: 2em;
@@ -247,18 +253,18 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     position: absolute;
     top: -1px;
     right: -1px;
-    clip-path: polygon(0% 0%,35% 100%, 100% 100%, 100% 0%);
-
+    clip-path: polygon(0% 0%, 35% 100%, 100% 100%, 100% 0%);
 }
-.new{
+
+.new {
     padding: 2em 3em 1em 1em;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     cursor: pointer;
     position: relative;
-
 }
+
 .new::before{
     content: "";
     height: 4em;
@@ -268,16 +274,19 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     bottom: -1px;
     right: -1px;
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
-
 }
+
 .new:hover{
     background-color: #FF003C;
 }
+
 .new-titulo{
     margin-bottom: 2em;
 }
+
 .new-fecha{
-    opacity: 0.7;
+    opacity: 0.5;
+    font-weight: 600;
 }
 
 /*************/
@@ -304,46 +313,46 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     display:flex;
     flex-direction:column;
     align-items:start;
-
+    gap: 0.5em;
 }
 
-.news-email-label{
+/*.news-email-label{
     padding-bottom:0.7em;
-}
+}*/
 
 .news-email-text{
-    margin-bottom:1.5em;
+    width: 100%;
+    margin-bottom: 1em;
     color:white;
     font-size:1rem;
-    padding:0.25em;/*little padding for a little text*/
+    padding:0.25em; /*little padding for a little text*/
     background:#030303;
-    border:2px solid rgba(255,255,255,0.5);/*translucent black border*/
+    border:2px solid rgba(255,255,255,0.5); /*translucent black border*/
 }
-
+/*
 .news-birth-label{
     padding-bottom:0.7em;
-}
+}*/
 
 .news-birth-select{
-    margin-bottom:1em;
+    margin-bottom: 1em;
     padding:0.4em 1em;
     background:#030303;
     color:white;
-    border:2px solid rgba(255,255,255,0.5);/*translucent black border*/
+    border:2px solid rgba(255,255,255,0.5); /*translucent black border*/
 }
 .news-text-check{
     font-size:0.9rem;
-
 }
 
 .news-form-wrapper .button{
     align-self:end; /*its the only item in the right*/
-    margin-top:2em;
+    margin-top: 1.75em;
 }
 
 .news-birth-select option{
       background:#030303;
-      font-size:1.2rem; /*bigger select options*/
+      font-size: 1rem; /*bigger select options*/
 }
 
 
@@ -506,6 +515,6 @@ footer > section {
     }
     .second-section{
         padding-top: 4em;
-        padding-bottom: 2em;
+        padding-bottom: 4em;
     }
 }
