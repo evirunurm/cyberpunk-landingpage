@@ -261,7 +261,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav {
     height: 4em; /* APRX SIZE OF THE IMAGE */
     width: 100%;
     bottom: -3.8em;
-    background: url("../../assets/imgs/support/bottom-border.png"); /* SETTING THE LOWER IMAGE */
+    background: url("../assets/imgs/support/bottom-border.png"); /* SETTING THE LOWER IMAGE */
     background-repeat: no-repeat;
     background-size: 100%;
 }
