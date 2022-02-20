@@ -196,7 +196,6 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
     width: 40vw;
     max-width: 600px;
     height: 30vh;
-    bottom: -1em;
     right: 10vw;
     margin-top: 2em;
     clip-path: polygon(0% 0%, 73% 0, 77% 4%, 91% 4%, 93% 8%, 100% 8%, 100% 80%, 95% 85%, 95% 100%, 20% 100%, 15% 95%, 0% 95%);
@@ -437,6 +436,10 @@ footer > section {
         position: relative;
         bottom: -3.5em;
         right: 20vw;
+    }
+
+    .logo {
+        margin-top: 0;
     }
 
     /* SECTION 3 */
