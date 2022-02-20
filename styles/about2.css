@@ -2,6 +2,7 @@
 /* PINK: #FF003C */
 /* BLACK: #030303 */
 /* YELLOW: #F7F100 */
+/* AGUA: #02D7F2 */
 
 
 /*****************/
@@ -80,7 +81,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 10%;
-    padding: 0 2em; /* PADDING ON BORDER */
+    padding: 0 2em;
 }
 
 .brand-img {
@@ -88,10 +89,9 @@ nav {
 }
 
 .nav-burger {
-    border: none;
     background: #FF003C; /* PINK */
     height: 50%;
-    padding: .75em 0.75em; /* CENTER THE TOMATO */
+    padding: 10px 10px; /* CENTER THE TOMATO */
     cursor: pointer;
 }
 
@@ -99,30 +99,39 @@ nav {
     height: 100%;
     cursor: pointer;
 }
+
+.mobile-nav-wrapper {
+    height: 500px;
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
 .mobile-nav {
     position: absolute;
-    background: #F7F100;
-    color: #030303;
+    background: #02D7F2;
     padding: 2.5em 1.5em;
     list-style-type: none; /* NO MORE BULLETS >:( */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    right: 0;
-    top: -300px;
-    transition: 0.25s ease-in-out;
-    font-weight: bold;
+    width: 200px;
+    left: -500px;
+    transition: 0.25s ease-in;
 }
 
-input[name="mobileMenu"]:checked ~ .mobile-nav {
-    top: 10vh;
+input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
+    left: 0;
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
-    color: #030303;
+    font-weight: bold;
+    color: black;
     text-decoration: none;
 }
-
 
 /***************************/
 /* MAC USERS (AND WINDOWS) */

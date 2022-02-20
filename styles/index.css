@@ -87,16 +87,25 @@ nav {
 }
 
 .nav-burger {
-    border: none;
     background: #FF003C; /* PINK */
     height: 50%;
-    padding: .85em 0.75em; /* CENTER THE TOMATO */
+    padding: 10px 10px; /* CENTER THE TOMATO */
     cursor: pointer;
 }
 
 .nav-burger img {
     height: 100%;
     cursor: pointer;
+}
+
+.mobile-nav-wrapper {
+    height: 500px;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    overflow: hidden;
+    z-index: 10;
 }
 
 .mobile-nav {
@@ -108,18 +117,19 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    right: 0;
-    top: -300px;
+    width: 200px;
+    right: -500px;
     transition: 0.25s ease-in;
 }
 
-input[name="mobileMenu"]:checked ~ .mobile-nav {
-    top: 10vh;
+input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
+    right: 0;
 }
 
 .mobile-nav a { /* SELECTS SPECIFICALLY THE A'S (NOT THE ASS)*/
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /***************************/
