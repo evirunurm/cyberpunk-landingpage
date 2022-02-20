@@ -229,13 +229,12 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
 }
 
 
-
 /*************/
 /* SECTION 2 */
 /*************/
 .second-section {
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .second-section-titulo {

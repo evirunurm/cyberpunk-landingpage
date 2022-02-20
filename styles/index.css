@@ -163,9 +163,8 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    padding-bottom: 4em;
 }
 
 .background-img-container {
@@ -186,6 +185,7 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
 }
 
 .logo {
+    margin-top: 40%;
     width: 100%;
     max-width: 1200px;
     mix-blend-mode: difference; /* APPLYING THE "DIFFERENCE" BLEND MODE SO THE BACKGROUND IS VISIBLE THOUGH*/
