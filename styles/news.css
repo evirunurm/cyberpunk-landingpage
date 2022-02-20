@@ -95,13 +95,16 @@ nav {
 
 .nav-burger {
     background: #FF003C; /* PINK */
-    height: 50%;
-    padding: 10px 10px; /* CENTER THE TOMATO */
+    height: 50px;
+    width: 50px;
     cursor: pointer;
+    display: grid;
+    place-content: center;
 }
 
 .nav-burger img {
-    height: 100%;
+    transform: translateY(50%);
+    height: 50%;
     cursor: pointer;
 }
 
@@ -240,10 +243,6 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
     position: relative; /* FOR BEFORE */
 }
 
-.new {
-    background-color: #02D7F2;
-}
-
 .news-wrapper {
     display: flex;
     flex-direction: column;
@@ -273,6 +272,9 @@ input[name="mobileMenu"]:checked ~ .mobile-nav-wrapper .mobile-nav {
     gap: 1.5em;
     cursor: pointer;
     position: relative;
+    background-color: #02D7F2;
+    width: 1000px; /* TRUCO: PARA QUE SEA DEL MISMO TAMAÑO */
+    max-width: 100%; /* TRUCO: PARA QUE SEA DEL MISMO TAMAÑO */
 }
 
 .new::before{
