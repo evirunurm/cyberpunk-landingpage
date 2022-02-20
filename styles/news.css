@@ -95,15 +95,17 @@ nav {
 
 .nav-burger {
     background: #FF003C; /* PINK */
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     cursor: pointer;
-    display: grid;
-    place-content: center;
+    position: relative;
 }
 
 .nav-burger img {
-    transform: translateY(50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 50%;
     cursor: pointer;
 }

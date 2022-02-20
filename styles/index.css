@@ -88,13 +88,18 @@ nav {
 
 .nav-burger {
     background: #FF003C; /* PINK */
-    height: 50%;
-    padding: 10px 10px; /* CENTER THE TOMATO */
+    height: 40px;
+    width: 40px;
     cursor: pointer;
+    position: relative;
 }
 
 .nav-burger img {
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
     cursor: pointer;
 }
 
